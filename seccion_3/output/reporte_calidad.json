@@ -1,0 +1,44 @@
+{
+  "fecha_ejecucion": "2026-10-02",
+  "total_registros": 1230,
+  "registros_validos": 811,
+  "registros_rechazados": 419,
+  "porcentaje_validos": 65.93,
+  "score_por_dimension": {
+    "completitud": {
+      "score_pct": 96.1,
+      "registros_que_fallan": 48
+    },
+    "validez": {
+      "score_pct": 77.32,
+      "registros_que_fallan": 279
+    },
+    "unicidad": {
+      "score_pct": 95.12,
+      "registros_que_fallan": 60
+    },
+    "consistencia": {
+      "score_pct": 96.75,
+      "registros_que_fallan": 40
+    },
+    "oportunidad": {
+      "score_pct": 97.07,
+      "registros_que_fallan": 36
+    }
+  },
+  "rechazados_por_regla": {
+    "completitud": 48,
+    "validez": 279,
+    "unicidad": 60,
+    "consistencia": 40,
+    "oportunidad": 36
+  },
+  "criterios_aplicados": {
+    "completitud": "id_cliente, periodo, trabajadores_activos y valor_contrato son obligatorios",
+    "validez": "id_cliente debe cumplir CLI-0000; periodo debe ser YYYY-MM-DD; trabajadores_activos debe ser entero >= 0; valor_contrato debe ser >= 0",
+    "unicidad": "no puede repetirse la combinacion id_cliente + periodo",
+    "consistencia": "si valor_contrato > 0, trabajadores_activos debe ser > 0",
+    "oportunidad": "periodo no puede estar en el futuro ni tener mas de 60 dias de atraso"
+  },
+  "nota": "Un registro puede fallar mas de una regla; por eso la suma de rechazos por dimension puede superar el total de registros rechazados."
+}
